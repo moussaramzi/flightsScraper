@@ -1,31 +1,44 @@
-﻿
-using static flightsScraper.Webscraper;
+﻿using static flightsScraper.Webscraper;
 
 namespace flightsScraper
 {
     class Program
     {
-         static void Main()
+        static void Main()
         {
-            using (var webScraper = new Webscraper())
+            try
             {
-                Console.WriteLine("Enter departure city:");
-                string departureCity = Console.ReadLine();
-
-                // Accept cookies
-                webScraper.AcceptCookies();
-                List<FlightInfo> flightInfos = webScraper.EnterDepartureAndSearch(departureCity);
-                // Define the CSV file path
-                string csvFilePath = Path.Combine("csv/data.csv");
-                if (flightInfos != null && flightInfos.Any())
+                using (var webScraper = new Webscraper())
                 {
-                    webScraper.WriteToCsv(flightInfos, csvFilePath);
+                    Console.WriteLine("Enter departure city:");
+                    string departureCity = Console.ReadLine();
+
+                    // Accept cookies
+                    webScraper.AcceptCookies();
+                    List<FlightInfo> flightInfos = webScraper.EnterDepartureAndSearch(departureCity);
+
+                    if (flightInfos != null && flightInfos.Any())
+                    {
+                      
+                        string csvFilePath = ("C:\\Users\\mouss_66fvi74\\source\\repos\\flightsScraper\\csv\\data.csv");
+                        string jsonFilePath = ("C:\\Users\\mouss_66fvi74\\source\\repos\\flightsScraper\\json\\data.json");
+
+
+                        webScraper.WriteToCsvAndJson(flightInfos, csvFilePath, jsonFilePath);
+                  
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("No flight information found.");
+                    }
                 }
-                // Provide departure and destination airports or locations
-
-
-              
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }

@@ -13,6 +13,8 @@ using CsvHelper;
 using static flightsScraper.Webscraper;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.DevTools.V118.IndexedDB;
+using Newtonsoft.Json;
+
 
 namespace flightsScraper
 {
@@ -25,58 +27,7 @@ namespace flightsScraper
             // Initialize WebDriver
             driver = new ChromeDriver();
         }
-        /*
-
-        public void ScrapeFlightPrices(string departure, string destination)
-        {
-            try
-            {
-                // Navigate to Google Flights
-                driver.Navigate().GoToUrl("https://www.google.com/flights");
-
-                // Wait for the page to load
-                Thread.Sleep(5000);
-
-                // Find and interact with the elements to enter departure and destination
-                IWebElement departureInput = driver.FindElement(By.CssSelector("input[jsname='yrriRe'][role='combobox'][aria-haspopup='true'][aria-expanded='false'][jslog='8582;ved:2ahUKEwjs_9r9lZSDAxXixxEIHQBCCfkQhkN6BAgDEAw;track:click']"));
-                departureInput.Clear(); // Clear existing text
-                departureInput.SendKeys(departure);
-
-                IWebElement destinationInput = driver.FindElement(By.CssSelector("input[jsname='yrriRe'][aria-label='Waarheen nog meer?']"));
-                destinationInput.Clear(); // Clear existing text
-                destinationInput.SendKeys(destination);
-
-
-                // Wait for the dropdown suggestions to load
-                Thread.Sleep(2000);
-
-                // Select the first suggestion for both departure and destination
-                IWebElement firstSuggestion = driver.FindElement(By.XPath("li[role='option']"));
-                firstSuggestion.Click();
-
-                // Click on the search button
-                IWebElement searchButton = driver.FindElement(By.XPath("//button[@aria-label='Search flights']"));
-                searchButton.Click();
-
-                // Wait for the search results to load (you might need to adjust the wait time)
-                Thread.Sleep(5000);
-
-                // Implement your scraping logic here
-                // Use driver.FindElement and other methods to find and extract data
-
-                // For example, extracting prices
-                IWebElement priceElement = driver.FindElement(By.XPath("//div[@class='flt-subhead1 gws-flights-results__price']"));
-                string price = priceElement.Text;
-
-                // Print the scraped price
-                Console.WriteLine($"Flight price: {price}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-            }
-        }
-        */
+       
 
         public void AcceptCookies()
         {
@@ -121,23 +72,11 @@ namespace flightsScraper
                 Console.WriteLine("After entering departure");
                 actions.SendKeys(Keys.Enter).Perform();
 
-                // Wait for the dropdown suggestions to load
+                // Wait and press enter
                 Thread.Sleep(2000);
                 actions.SendKeys(Keys.Enter).Perform();
 
-                // Simulate pressing the "Enter" key to select the first suggestion
-                // Find the button based on text content
-                /*
-                Console.WriteLine("Before finding search button");
-                IWebElement searchButton = driver.FindElement(By.CssSelector("button[jsname='vLv7Lb']"));
-                Console.WriteLine("After finding search button");
-
-                // Click on the search button
-                Console.WriteLine("Before clicking search button");
-                searchButton.Click();
-                Console.WriteLine("After clicking search button");
-                */
-                // Wait for the search results to load (you might need to adjust the wait time)
+            
                 Thread.Sleep(6000);
 
                 // Find the ol element containing the flight results
@@ -172,6 +111,7 @@ namespace flightsScraper
                     flightInfos.Add(new FlightInfo { Name = name, Date = date, Price = price });
                 }
                 Console.WriteLine("After loop");
+                Console.WriteLine($"Number of flightInfos: {flightInfos.Count}");
 
                 Console.WriteLine("Scraping completed");
                 return flightInfos;
@@ -183,28 +123,38 @@ namespace flightsScraper
             }
         }
 
-        public void WriteToCsv(List<FlightInfo> flightInfos, string filePath)
+        public void WriteToCsvAndJson(List<FlightInfo> flightInfos, string filePath, string jsonFilePath)
         {
             try
             {
-                using (var writer = new StreamWriter(filePath))
+                // Use 'true' to append to an existing file
+                using (var writer = new StreamWriter(filePath, true))
                 using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                using (var jsonWriter = new StreamWriter(jsonFilePath, true))
+
                 {
+                    // Check if the file exists
+                    if (!File.Exists(filePath))
+                    {
+                        // If the file doesn't exist, write the header
+                        csv.WriteRecords(new List<FlightInfo> { new FlightInfo { Name = "Name", Date = "Date", Price = "Price" } });
+                    }
+
+                    // Append the records
                     csv.WriteRecords(flightInfos);
+                    string json = JsonConvert.SerializeObject(flightInfos, Formatting.Indented);
+                    jsonWriter.WriteLine(json);
                 }
 
                 Console.WriteLine($"Data written to CSV file: {filePath}");
+                Console.WriteLine($"Data written to json file: {jsonFilePath}");
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred while writing to CSV: {ex.Message}");
             }
         }
-
-
-
-
-
 
 
         public void Dispose()
