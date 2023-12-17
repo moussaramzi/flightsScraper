@@ -55,9 +55,6 @@ namespace flightsScraper
             List<FlightInfo> flightInfos = new List<FlightInfo>();
             try
             {
-                // Navigate to Google Flights
-
-                // Wait for the page to load
 
                 // Find and interact with the element to enter departure
                 Console.WriteLine("Before finding departure input");
