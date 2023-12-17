@@ -1,0 +1,202 @@
+[
+  {
+    "Name": "Istanboel",
+    "Date": "12–20 jan 2024",
+    "Price": "60 euro"
+  },
+  {
+    "Name": "Milaan",
+    "Date": "30 dec 2023 – 8 jan 2024",
+    "Price": "34 euro"
+  },
+  {
+    "Name": "Athene",
+    "Date": "21–29 jan 2024",
+    "Price": "45 euro"
+  },
+  {
+    "Name": "Mykonos",
+    "Date": "13–20 apr 2024",
+    "Price": "81 euro"
+  },
+  {
+    "Name": "Santorini",
+    "Date": "19–26 apr 2024",
+    "Price": "120 euro"
+  },
+  {
+    "Name": "Boedapest",
+    "Date": "31 dec 2023 – 9 jan 2024",
+    "Price": "41 euro"
+  },
+  {
+    "Name": "Split",
+    "Date": "13–19 apr 2024",
+    "Price": "52 euro"
+  },
+  {
+    "Name": "Venetië",
+    "Date": "31 dec 2023 – 8 jan 2024",
+    "Price": "38 euro"
+  },
+  {
+    "Name": "Dubrovnik",
+    "Date": "18–25 mrt 2024",
+    "Price": "80 euro"
+  },
+  {
+    "Name": "Barcelona",
+    "Date": "6–12 jan 2024",
+    "Price": "36 euro"
+  },
+  {
+    "Name": "Zürich",
+    "Date": "5–11 feb 2024",
+    "Price": "67 euro"
+  },
+  {
+    "Name": "Lissabon",
+    "Date": "8–17 jan 2024",
+    "Price": "39 euro"
+  },
+  {
+    "Name": "Bordeaux",
+    "Date": "31 dec 2023 – 8 jan 2024",
+    "Price": "35 euro"
+  },
+  {
+    "Name": "Rome",
+    "Date": "4–10 jan 2024",
+    "Price": "38 euro"
+  },
+  {
+    "Name": "Nice",
+    "Date": "7–14 jan 2024",
+    "Price": "40 euro"
+  },
+  {
+    "Name": "Amsterdam",
+    "Date": "29 feb – 8 mrt 2024",
+    "Price": "75 euro"
+  },
+  {
+    "Name": "Antalya",
+    "Date": "24 feb – 2 mrt 2024",
+    "Price": "42 euro"
+  },
+  {
+    "Name": "Sevilla",
+    "Date": "5–12 jan 2024",
+    "Price": "38 euro"
+  },
+  {
+    "Name": "Dublin",
+    "Date": "30 dec 2023 – 5 jan 2024",
+    "Price": "35 euro"
+  },
+  {
+    "Name": "Madrid",
+    "Date": "4–10 jan 2024",
+    "Price": "41 euro"
+  },
+  {
+    "Name": "Manchester",
+    "Date": "13–19 mei 2024",
+    "Price": "81 euro"
+  },
+  {
+    "Name": "Parijs",
+    "Date": "25–31 jan 2024",
+    "Price": "59 euro"
+  },
+  {
+    "Name": "Berlijn",
+    "Date": "7–13 jan 2024",
+    "Price": "47 euro"
+  },
+  {
+    "Name": "Krakau",
+    "Date": "4–12 mrt 2024",
+    "Price": "31 euro"
+  },
+  {
+    "Name": "Praag",
+    "Date": "4–10 jan 2024",
+    "Price": "41 euro"
+  },
+  {
+    "Name": "Wenen",
+    "Date": "4–10 jan 2024",
+    "Price": "38 euro"
+  },
+  {
+    "Name": "Florence",
+    "Date": "4–13 jan 2024",
+    "Price": "74 euro"
+  },
+  {
+    "Name": "München",
+    "Date": "27 jan – 3 feb 2024",
+    "Price": "80 euro"
+  },
+  {
+    "Name": "Porto",
+    "Date": "4–10 jan 2024",
+    "Price": "38 euro"
+  },
+  {
+    "Name": "Napels",
+    "Date": "5–13 jan 2024",
+    "Price": "40 euro"
+  },
+  {
+    "Name": "Valencia",
+    "Date": "3–12 feb 2024",
+    "Price": "35 euro"
+  },
+  {
+    "Name": "Salzburg",
+    "Date": "8–17 jan 2024",
+    "Price": "42 euro"
+  },
+  {
+    "Name": "Hamburg",
+    "Date": "1–9 jan 2024",
+    "Price": "52 euro"
+  },
+  {
+    "Name": "Frankfurt am Main",
+    "Date": "15–21 feb 2024",
+    "Price": "122 euro"
+  },
+  {
+    "Name": "Ljubljana",
+    "Date": "6–13 jan 2024",
+    "Price": "45 euro"
+  },
+  {
+    "Name": "Granada",
+    "Date": "24 feb – 2 mrt 2024",
+    "Price": "110 euro"
+  },
+  {
+    "Name": "Lyon",
+    "Date": "11–18 jan 2024",
+    "Price": "29 euro"
+  },
+  {
+    "Name": "Keulen",
+    "Date": "11–17 jan 2024",
+    "Price": "40 euro"
+  },
+  {
+    "Name": "Málaga",
+    "Date": "13–19 jan 2024",
+    "Price": "29 euro"
+  },
+  {
+    "Name": "Marseille",
+    "Date": "8–14 jan 2024",
+    "Price": "41 euro"
+  }
+]

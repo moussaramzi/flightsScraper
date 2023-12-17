@@ -19,14 +19,9 @@ namespace flightsScraper
 
                     if (flightInfos != null && flightInfos.Any())
                     {
-                      
                         string csvFilePath = ("C:\\Users\\mouss_66fvi74\\source\\repos\\flightsScraper\\csv\\data.csv");
                         string jsonFilePath = ("C:\\Users\\mouss_66fvi74\\source\\repos\\flightsScraper\\json\\data.json");
-
-
                         webScraper.WriteToCsvAndJson(flightInfos, csvFilePath, jsonFilePath);
-                  
-
                     }
                     else
                     {

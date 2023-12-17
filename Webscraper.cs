@@ -56,10 +56,8 @@ namespace flightsScraper
             try
             {
                 // Navigate to Google Flights
-                driver.Navigate().GoToUrl("https://www.google.com/flights");
 
                 // Wait for the page to load
-                Thread.Sleep(4000);
 
                 // Find and interact with the element to enter departure
                 Console.WriteLine("Before finding departure input");
